@@ -94,6 +94,24 @@ hist(steps_day$x)
 
 ![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
 
+
+```r
+mean(steps_day$x)
+```
+
+```
+## [1] 10766.19
+```
+
+
+```r
+median(steps_day$x)
+```
+
+```
+## [1] 10765
+```
+
 The mean of the total number of steps taken per day is 1.0766189 &times; 10<sup>4</sup> and the median is 10765.
 
 ## What is the average daily activity pattern?
@@ -106,9 +124,18 @@ mean_steps <- aggregate(steps[,c("steps")], by=list(steps$interval), "mean")
 plot(mean_steps$Group.1, mean_steps$x, type = "l")
 ```
 
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png) 
+![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png) 
 
-The 835 is the 5-minute interval with the maximum number of steps.
+
+```r
+with(mean_steps, Group.1[x == max(x)])
+```
+
+```
+## [1] 835
+```
+
+The 835 interval is the 5-minute interval with the maximum number of steps.
 
 ## Imputing missing values
 
@@ -139,7 +166,25 @@ The histogram below shows the total number of steps taken each day once the miss
 hist(filled_steps_day$x)
 ```
 
-![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png) 
+![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png) 
+
+
+```r
+mean(filled_steps_day$x)
+```
+
+```
+## [1] 10765.64
+```
+
+
+```r
+median(filled_steps_day$x)
+```
+
+```
+## [1] 10762
+```
 
 The new mean of the total number of steps taken per day is 1.0765639 &times; 10<sup>4</sup> and the new median is 1.0762 &times; 10<sup>4</sup>.
 
@@ -163,4 +208,4 @@ xyplot(x ~ Group.1 | Group.2,
 )
 ```
 
-![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png) 
+![plot of chunk unnamed-chunk-13](figure/unnamed-chunk-13-1.png) 

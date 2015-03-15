@@ -32,6 +32,14 @@ The histogram of the total number of steps taken each day is shown below:
 hist(steps_day$x)
 ```
 
+```{r, echo = TRUE}
+mean(steps_day$x)
+```
+
+```{r, echo = TRUE}
+median(steps_day$x)
+```
+
 The mean of the total number of steps taken per day is `r mean(steps_day$x)` and the median is `r median(steps_day$x)`.
 
 ## What is the average daily activity pattern?
@@ -43,7 +51,11 @@ mean_steps <- aggregate(steps[,c("steps")], by=list(steps$interval), "mean")
 plot(mean_steps$Group.1, mean_steps$x, type = "l")
 ```
 
-The `r with(mean_steps, Group.1[x == max(x)])` is the 5-minute interval with the maximum number of steps.
+```{r, echo = TRUE}
+with(mean_steps, Group.1[x == max(x)])
+```
+
+The `r with(mean_steps, Group.1[x == max(x)])` interval is the 5-minute interval with the maximum number of steps.
 
 ## Imputing missing values
 
@@ -69,6 +81,14 @@ The histogram below shows the total number of steps taken each day once the miss
 
 ```{r, echo = TRUE}
 hist(filled_steps_day$x)
+```
+
+```{r, echo = TRUE}
+mean(filled_steps_day$x)
+```
+
+```{r, echo = TRUE}
+median(filled_steps_day$x)
 ```
 
 The new mean of the total number of steps taken per day is `r mean(filled_steps_day$x)` and the new median is `r median(filled_steps_day$x)`.

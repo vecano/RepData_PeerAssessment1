@@ -1,4 +1,9 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output:
+  html_document:
+    keep_md: true
+---
 
 
 ## Loading and preprocessing the data
@@ -86,9 +91,9 @@ The histogram of the total number of steps taken each day is shown below:
 hist(steps_day$x)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
 
-The mean of the total number of steps taken per day is 1.0766189\times 10^{4} and the median is 10765.
+The mean of the total number of steps taken per day is 1.0766189 &times; 10<sup>4</sup> and the median is 10765.
 
 ## What is the average daily activity pattern?
 
@@ -100,7 +105,7 @@ mean_steps <- aggregate(steps[,c("steps")], by=list(steps$interval), "mean")
 plot(mean_steps$Group.1, mean_steps$x, type = "l")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png) 
 
 The 835 is the 5-minute interval with the maximum number of steps.
 
@@ -133,9 +138,9 @@ The histogram below shows the total number of steps taken each day once the miss
 hist(filled_steps_day$x)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-7-1.png) 
+![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png) 
 
-The new mean of the total number of steps taken per day is 1.0765639\times 10^{4} and the new median is 1.0762\times 10^{4}.
+The new mean of the total number of steps taken per day is 1.0765639 &times; 10<sup>4</sup> and the new median is 1.0762 &times; 10<sup>4</sup>.
 
 There is a very small difference between the mean and median values obtained by filling in missing values and the original ones that do not take them into account.
 
@@ -157,4 +162,4 @@ xyplot(x ~ Group.1 | Group.2,
 )
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-8-1.png) 
+![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png) 

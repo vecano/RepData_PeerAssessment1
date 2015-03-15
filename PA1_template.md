@@ -5,6 +5,7 @@ output:
     keep_md: true
 ---
 
+# Analysis of Activity Monitoring Device for a Two Day Period
 
 ## Loading and preprocessing the data
 
@@ -146,7 +147,7 @@ There is a very small difference between the mean and median values obtained by 
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
-The plot below shows the 5-minute interval and the average number of steps taken, averaged across all weekday days or weekend days.
+The plot below shows the 5-minute interval and the average number of steps taken, averaged across all weekday days or weekend days. There seems to be more activity during the weekends and it is distributed more evenly accross the active intervals.
 
 
 ```r

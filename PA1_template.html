@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<title>Loading and preprocessing the data</title>
+<title>Analysis of Activity Monitoring Device for a Two Day Period</title>
 
 <script type="text/javascript">
 window.onload = function() {
@@ -201,6 +201,8 @@ hr {
 </head>
 
 <body>
+<h1>Analysis of Activity Monitoring Device for a Two Day Period</h1>
+
 <h2>Loading and preprocessing the data</h2>
 
 <p>We omit any interval for which there is no <code>steps</code> information:</p>
@@ -326,7 +328,7 @@ filled_steps_day &lt;- aggregate(filled_steps[,c(&quot;steps&quot;)], by=list(fi
 
 <h2>Are there differences in activity patterns between weekdays and weekends?</h2>
 
-<p>The plot below shows the 5-minute interval and the average number of steps taken, averaged across all weekday days or weekend days.</p>
+<p>The plot below shows the 5-minute interval and the average number of steps taken, averaged across all weekday days or weekend days. There seems to be more activity during the weekends and it is distributed more evenly accross the active intervals.</p>
 
 <pre><code class="r">library(lattice)
 filled_steps$day &lt;- ifelse(weekdays(as.Date(filled_steps$date)) %in% c(&quot;Saturday&quot;, &quot;Sunday&quot;), &quot;weekend&quot;, &quot;weekday&quot;)
